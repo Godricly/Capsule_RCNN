@@ -102,3 +102,6 @@ ENV/
 
 # data
 /data
+*.params
+*.jpg
+*.swp

@@ -55,4 +55,4 @@ def get_iterators(data_shape, batch_size):
 
 train_data, test_data, class_names, num_class = get_iterators(data_shape, batch_size)
 batch = train_data.next()
-print(batch)
+# print(batch)
