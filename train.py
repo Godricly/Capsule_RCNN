@@ -54,7 +54,7 @@ if __name__ == '__main__':
     box_metric = mx.metric.MAE() 
 
     ### Set context for training
-    ctx = mx.gpu(1)  # it may takes too long to train using CPU
+    ctx = mx.gpu(0)  # it may takes too long to train using CPU
     try:
         _ = nd.zeros(1, ctx=ctx)
         # pad label for cuda implementation
@@ -93,7 +93,7 @@ if __name__ == '__main__':
                 loss1 = cls_loss(class_predictions, cls_target)
                 loss2 = box_loss(box_predictions, box_target, box_mask)
                 # sum all losses
-                loss = loss1 # + loss2
+                loss = loss1 + loss2
                 # backpropagate
                 # loss.backward(retain_graph=True)
                 loss.backward()
